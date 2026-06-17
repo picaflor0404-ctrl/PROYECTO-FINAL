@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transforma tu Cuerpo - FitLife Gym</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>TRANSFORMA TU CUERPO</h1>
+            <p>Entrena con los mejores profesionales y consigue resultados increíbles.</p>
+            <div class="hero-buttons">
+                <a href="/dashboard" class="btn-primary">📊 Panel de Control</a>
+                <a href="#servicios" class="btn-secondary">Ver Servicios</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="stats">
+        <div class="stat-item">
+            <span class="stat-number">+5000</span>
+            <span class="stat-label">Clientes Satisfechos</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">15</span>
+            <span class="stat-label">Entrenadores Profesionales</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Disponibilidad</span>
+        </div>
+    </section>
+
+    <section id="servicios" class="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <h3>Pesas</h3>
+                <p>Zona completa para fuerza y musculación.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Cardio</h3>
+                <p>Caminadoras y bicicletas de última generación.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Nutrición</h3>
+                <p>Planes alimenticios personalizados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonios">
+        <h2>Testimonios</h2>
+        <div class="testimonios-grid">
+            <div class="testimonio-card">
+                <p>"Perdí 15 kg gracias a FitLife Gym."</p>
+                <span class="testimonio-autor">- Carlos Pérez</span>
+            </div>
+            <div class="testimonio-card">
+                <p>"Los entrenadores son excelentes."</p>
+                <span class="testimonio-autor">- Ana Gómez</span>
+            </div>
+            <div class="testimonio-card">
+                <p>"Mi salud mejoró muchísimo."</p>
+                <span class="testimonio-autor">- Laura Martínez</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 FitLife Gym - Todos los derechos reservados</p>
+        <p>
+            <a href="/dashboard">Dashboard</a> |
+            <a href="/clientes">Clientes</a> |
+            <a href="/horarios">Horarios</a>
+        </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
