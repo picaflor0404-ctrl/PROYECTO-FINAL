@@ -186,4 +186,4 @@ def delete_horario(id):
     return jsonify({'message': 'Horario eliminado'}), 200
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5001, debug=True)
+    app.run(debug=True)
