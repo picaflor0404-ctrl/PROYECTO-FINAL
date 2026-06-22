@@ -1,81 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horarios - FitLife Gym</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
 </head>
 <body>
-    <nav class="dashboard-nav">
-        <h2>🏋️ FitLife Gym</h2>
-        <ul>
-            <li><a href="/dashboard">📊 Dashboard</a></li>
-            <li><a href="/clientes">👥 Clientes</a></li>
-            <li><a href="/horarios" class="active">📅 Horarios</a></li>
-            <li><a href="/">🏠 Inicio</a></li>
-        </ul>
-    </nav>
-
-    <main class="dashboard-main">
-        <h1>Gestión de Horarios</h1>
-
-        <section class="form-section">
-            <h2 id="formTitleHorario">Agregar Nuevo Horario</h2>
-            <form id="horarioForm">
-                <input type="hidden" id="horarioId" />
-                <div class="form-group">
-                    <label for="cliente">Cliente:</label>
-                    <select id="cliente" required>
-                        <option value="">Seleccione un cliente...</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="dia">Día:</label>
-                    <select id="dia" required>
-                        <option value="Lunes">Lunes</option>
-                        <option value="Martes">Martes</option>
-                        <option value="Miércoles">Miércoles</option>
-                        <option value="Jueves">Jueves</option>
-                        <option value="Viernes">Viernes</option>
-                        <option value="Sábado">Sábado</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="hora">Hora:</label>
-                    <input type="time" id="hora" required />
-                </div>
-                <div class="form-group">
-                    <label for="entrenador">Entrenador:</label>
-                    <input type="text" id="entrenador" placeholder="Ej: Carlos" required />
-                </div>
-                <button type="submit" id="btnGuardarHorario">Guardar Horario</button>
-                <button type="button" id="btnCancelarHorario" style="display: none">Cancelar Edición</button>
-            </form>
-        </section>
-
-        <section class="table-section">
-            <h2>Lista de Horarios</h2>
-            <div class="table-container">
-                <table id="tablaHorarios">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Cliente</th>
-                            <th>Día</th>
-                            <th>Hora</th>
-                            <th>Entrenador</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="cuerpoTablaHorarios">
-                        <tr><td colspan="6" style="text-align:center;">Cargando...</td></tr>
-                    </tbody>
-                </table>
+    <header class="hero" style="padding: 40px 20px;">
+        <div class="hero-content">
+            <h1>📅 Gestión de Horarios</h1>
+            <div class="hero-buttons">
+                <a href="/dashboard" class="btn-secondary">📊 Dashboard</a>
+                <a href="/" class="btn-secondary">🏠 Inicio</a>
             </div>
-        </section>
-    </main>
+        </div>
+    </header>
+
+    <section style="padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
+        <h2>Lista de Horarios</h2>
+        <div style="overflow-x: auto; margin-top: 20px;">
+            <table id="tablaHorarios" style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <thead style="background: #1a1a2e; color: white;">
+                    <tr>
+                        <th style="padding: 15px;">ID</th>
+                        <th style="padding: 15px;">Cliente</th>
+                        <th style="padding: 15px;">Día</th>
+                        <th style="padding: 15px;">Hora</th>
+                        <th style="padding: 15px;">Entrenador</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    <!-- Aquí se cargarán los horarios -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 FitLife Gym - Todos los derechos reservados</p>
+        <p><a href="/">Inicio</a> | <a href="/dashboard">Dashboard</a> | <a href="/clientes">Clientes</a></p>
+    </footer>
 
     <script src="{{ url_for('static', filename='js/horarios.js') }}"></script>
 </body>
