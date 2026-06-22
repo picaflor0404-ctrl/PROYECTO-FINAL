@@ -18,7 +18,40 @@
         </div>
     </header>
 
-    <section style="padding: 40px 20px; max-width: 1200px; margin: 0 auto;">
+    <section style="padding: 40px 20px; max-width: 800px; margin: 0 auto;">
+        <h2>Registrar Nuevo Horario</h2>
+        <form id="formHorario" style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 30px;">
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Cliente:</label>
+                <select id="cliente_id" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    <option value="">Selecciona un cliente</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Día:</label>
+                <select id="dia" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miércoles">Miércoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                    <option value="Sábado">Sábado</option>
+                    <option value="Domingo">Domingo</option>
+                </select>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Hora:</label>
+                <input type="time" id="hora" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Entrenador:</label>
+                <input type="text" id="entrenador" placeholder="Ej: Juan Pérez" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" required>
+            </div>
+            <button type="submit" style="background: #e94560; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; width: 100%;">
+                Guardar Horario
+            </button>
+        </form>
+
         <h2>Lista de Horarios</h2>
         <div style="overflow-x: auto; margin-top: 20px;">
             <table id="tablaHorarios" style="width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
@@ -29,10 +62,10 @@
                         <th style="padding: 15px;">Día</th>
                         <th style="padding: 15px;">Hora</th>
                         <th style="padding: 15px;">Entrenador</th>
+                        <th style="padding: 15px;">Acciones</th>
                     </tr>
                 </thead>
                 <tbody id="cuerpoTabla">
-                    <!-- Aquí se cargarán los horarios -->
                 </tbody>
             </table>
         </div>
